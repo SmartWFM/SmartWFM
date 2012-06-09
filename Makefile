@@ -11,7 +11,7 @@ config-dev: backend-php frontend-dev
 	rsync -avP --delete config/dev-Config.json.php build/swfm/app/config/Config.json.php
 
 config-local: backend-php frontend-dev
-	rsync -avP --delete config/local-local.php build/backend-php/config/local.php
+	rsync -avP --delete config/local-$$USER-local.php build/backend-php/config/local.php
 
 create-directories:
 	mkdir -p build
