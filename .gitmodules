@@ -1,0 +1,3 @@
+[submodule "swfm"]
+	path = swfm
+	url = git@github.com:SmartWFM/swfm.git
