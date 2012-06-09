@@ -1,3 +1,6 @@
 [submodule "swfm"]
 	path = swfm
 	url = git@github.com:SmartWFM/swfm.git
+[submodule "backend-php"]
+	path = backend-php
+	url = git@github.com:SmartWFM/backend-php.git
