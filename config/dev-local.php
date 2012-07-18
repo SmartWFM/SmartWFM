@@ -17,8 +17,8 @@
 	   USED BY: core
 	*/
 	SmartWFM_Registry::set('commands', array(
-		'base_actions', 'base_direct_commands', 'archive_actions', 
-		'afs_special_actions', 'setting_actions', 'search_actions', 
+		'base_actions', 'base_direct_commands', 'archive_actions',
+		'afs_special_actions', 'setting_actions', 'search_actions',
 		'feedback_actions', 'file_info_actions', 'bookmarks_actions'
 	));
 
@@ -73,7 +73,7 @@
 
 	   USED BY: feedback_actions
 	*/
-	SmartWFM_Registry::set('feedback_receiver', 'mjob@hrz.tu-chemnitz.de, webmaster@tu-chemnitz.de');
+	SmartWFM_Registry::set('feedback_receiver', 'mjob@hrz.tu-chemnitz.de');
 
 	/* Specify e-mail address which is the sender of the feedback messages
 
