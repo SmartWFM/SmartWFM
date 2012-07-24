@@ -17,7 +17,7 @@ create-directories:
 	mkdir -p build
 
 frontend-dev: create-directories
-	rsync -avP --delete swfm/ build/swfm --exclude=app/config/Config.json.php
+	rsync -avP --delete swfm/ build/swfm
 
 upload-uni: config-dev
 	rsync -avPe ssh --delete build/ uni:/var/www/html/swfm-test/v4
