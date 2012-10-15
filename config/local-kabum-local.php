@@ -82,5 +82,11 @@
 	   USED BY: feedback_actions
 	*/
 	SmartWFM_Registry::set('feedback_sender', 'user@example.com');
+
+	/* Set regex to match folders, which shouldn't listed while do a "dir.list" request
+
+	   USED BY: base_actions
+	*/
+	SmartWFM_Registry::set('folder_exclude_regex', '!^/home$!');
 ?>
 

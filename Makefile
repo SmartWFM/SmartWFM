@@ -1,23 +1,26 @@
 .PHONY: backend-php clean config-dev config-local create-directories frontend-dev upload-uni
 
-backend-php: create-directories
-	rsync -avP --delete backend-php/src/ build/backend-php
-
 clean:
 	rm -rf build/
-
-config-dev: backend-php frontend-dev
-	rsync -avP --delete config/dev-local.php build/backend-php/config/local.php
-	rsync -avP --delete config/dev-Config.json.php build/swfm/app/config/Config.json.php
-
-config-local: backend-php frontend-dev
-	rsync -avP --delete config/local-$$USER-local.php build/backend-php/config/local.php
 
 create-directories:
 	mkdir -p build
 
-frontend-dev: create-directories
-	rsync -avP --delete swfm/ build/swfm
+backend-php: create-directories
+	rsync -avP --delete backend-php/src/ build/backend-php
 
-upload-uni: config-dev
+frontend: create-directories
+	export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+	cd swfm && ant dev && cd ..
+	rsync -avP --delete swfm/build/ build/swfm
+
+config-local: backend-php frontend
+	rsync -avP --delete config/local-$$USER-local.php build/backend-php/config/local.php
+	rsync -avP --delete config/local-$$USER-Config.json.php build/swfm/app/config/Config.json.php
+
+config: backend-php frontend
+	rsync -avP --delete config/dev-local.php build/backend-php/config/local.php
+	rsync -avP --delete config/dev-Config.json.php build/swfm/app/config/Config.json.php
+
+upload-uni: config
 	rsync -avPe ssh --delete build/ uni:/var/www/html/swfm-test/v4
