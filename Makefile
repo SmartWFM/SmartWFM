@@ -10,8 +10,7 @@ backend-php: create-directories
 	rsync -avP --delete backend-php/src/ build/backend-php
 
 frontend: create-directories
-	export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
-	cd swfm && ant dev && cd ..
+	export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger' && cd swfm && ant dev && cd ..
 	rsync -avP --delete swfm/build/ build/swfm
 
 config-local: backend-php frontend
