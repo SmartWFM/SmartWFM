@@ -22,4 +22,5 @@ config: backend-php frontend
 	rsync -avP --delete config/dev-Config.json.php build/swfm/app/config/Config.json.php
 
 upload-uni: config
-	rsync -avPe ssh --delete build/ uni:/var/www/html/swfm-test/v4
+	rsync -avP --delete index.html build/index.php
+	rsync -avPe ssh --delete build/ uni:/var/www/html/swfm-test
