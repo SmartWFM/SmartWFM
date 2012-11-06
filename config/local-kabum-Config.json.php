@@ -1,5 +1,5 @@
 {
-	"homePath": 						"home/kabum",
+	"homePath": 						"/home/kabum",
 	"widget.treeMenu.excludeFolder":	"^\/home$",
-	"widget.treeMenu.rootNodeName": 	"",
+	"widget.treeMenu.rootNodeName": 	"test",
 }
