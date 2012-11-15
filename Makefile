@@ -16,6 +16,7 @@ frontend: create-directories
 config-local: backend-php frontend
 	rsync -avP --delete config/local-$$USER-local.php build/backend-php/config/local.php
 	rsync -avP --delete config/local-$$USER-Config.json.php build/swfm/app/config/Config.json.php
+	sed -i 's/^.*\/\* AFS only \*\///' build/swfm/SmartWFM.dev.js
 
 config: backend-php frontend
 	rsync -avP --delete config/dev-local.php build/backend-php/config/local.php
