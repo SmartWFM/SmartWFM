@@ -92,5 +92,13 @@
 	   USED BY: base_actions
 	*/
 	SmartWFM_Registry::set('folder_exclude_regex', '!^/home/urz(/[^/]+)?$!');
+
+	/* Specify the initial default bookmarks
+	   This is an array of a two value (name, location) array
+	   E.g.: [['name1', '/path/to/name1'], ['name2', '/path/to/name2']]
+
+	   USED BY: bookmarks_actions
+	*/
+	SmartWFM_Registry::set('default_bookmarks', [['/var/www', '/var/www']]);
 ?>
 
