@@ -99,6 +99,6 @@
 
 	   USED BY: bookmarks_actions
 	*/
-	SmartWFM_Registry::set('default_bookmarks', array(array('/www/root', '/www/root')));
+	SmartWFM_Registry::set('default_bookmarks', array(array('WWW', '/www/root'), array('PROJECT', '/project')));
 ?>
 
