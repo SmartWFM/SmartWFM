@@ -1,5 +1,5 @@
 Summary:	Backend for Smart Web File Manager in PHP
-Name:		backend-php
+Name:		swfm-backend-php
 Version:	1.0
 Release:	1
 License:	GPL
@@ -18,27 +18,30 @@ Requires:	php >= 5.3
 This is the PHP backend for the Smart Web File Manager.
 
 %prep
-%setup
+%setup -n backend-php-%{version}
 
 %build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/var/www/backend-php/config
-cp -ar src/* $RPM_BUILD_ROOT/var/www/backend-php
-rm $RPM_BUILD_ROOT/var/www/backend-php/config/*.dist
-install -m 0644 %{_sourcedir}/local.php $RPM_BUILD_ROOT/var/www/backend-php/config/
+mkdir -p $RPM_BUILD_ROOT/var/www/html/swfm-backend-php/config
+cp -ar src/* $RPM_BUILD_ROOT/var/www/html/swfm-backend-php
+rm $RPM_BUILD_ROOT/var/www/html/swfm-backend-php/config/*.dist
+install -m 0644 %{_sourcedir}/local.php $RPM_BUILD_ROOT/var/www/html/swfm-backend-php/config/
 
 %clean
 #rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%config(noreplace) /var/www/backend-php/config/local.php
-/var/www/backend-php/commands
-/var/www/backend-php/lib
-/var/www/backend-php/index.php
+%config(noreplace) /var/www/html/swfm-backend-php/config/local.php
+/var/www/html/swfm-backend-php/commands
+/var/www/html/swfm-backend-php/lib
+/var/www/html/swfm-backend-php/index.php
 
 %changelog
+* Mon Feb 25 2013 Morris Jobke <morris.jobke@gmail.com>
+- updated RPM SPEC file
+
 * Mon Feb 11 2013 Morris Jobke <morris.jobke@gmail.com>
 - initial RPM
