@@ -1,5 +1,7 @@
 .PHONY: backend-php clean config-dev config-local create-directories frontend-dev upload-uni
 
+BUILD_VERSION=dev
+
 clean:
 	rm -rf build/
 
@@ -10,7 +12,7 @@ backend-php: create-directories
 	rsync -avP --delete backend-php/src/ build/backend-php
 
 frontend: create-directories
-	export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger' && cd swfm && ant dev && cd ..
+	export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger' && cd swfm && ant ${BUILD_VERSION} && cd ..
 	rsync -avP --delete swfm/build/ build/swfm
 
 config-local: backend-php frontend
