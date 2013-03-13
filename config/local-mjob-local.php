@@ -15,7 +15,7 @@
 	SmartWFM_Registry::set('commands', array(
 		'base_actions', 'base_direct_commands', 'archive_actions',
 		'setting_actions', 'search_actions', 'feedback_actions',
-		'file_info_actions', 'bookmarks_actions'
+		'file_info_actions', 'bookmarks_actions', 'new_file'
 	));
 
 	/* Specify in which subdirectory the commands are located
