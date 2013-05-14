@@ -11,4 +11,8 @@ Create development environment for URZ server:
 
 Create previous and upload:
 
-	make upload-uni
+	make upload-uni BUILD_VERSION=all
+
+Build packages
+
+	make build VERSION=1.0

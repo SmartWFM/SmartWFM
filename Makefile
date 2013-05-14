@@ -1,6 +1,7 @@
-.PHONY: backend-php clean config-dev config-local create-directories frontend-dev upload-uni
+.PHONY: backend-php clean config-dev config-local create-directories frontend-dev upload-uni build
 
 BUILD_VERSION=dev
+VERSION=1.0
 
 clean:
 	rm -rf build/
@@ -31,3 +32,13 @@ config: backend-php frontend
 upload-uni: config
 	rsync -avP --delete index.html build/index.php
 	rsync -avPe ssh --delete build/ uni:/var/www/html/swfm-test
+
+build:
+	cd backend-php && make ARCHIVE_VERSION=${VERSION} archive && cd ..
+	cd swfm && make ARCHIVE_VERSION=${VERSION} archive && cd ..
+	mkdir -p ~/rpmbuild/SOURCES
+	cp backend-php/dist/backend-php-${VERSION}.tar.gz ~/rpmbuild/SOURCES
+	cp swfm/dist/swfm-${VERSION}.tar.gz ~/rpmbuild/SOURCES
+	cp SOURCES/* ~/rpmbuild/SOURCES
+	rpmbuild -ba SPECS/swfm.spec
+	rpmbuild -ba SPECS/swfm-backend-php.spec
