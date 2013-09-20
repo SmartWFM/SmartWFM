@@ -4,7 +4,7 @@
 	   USED BY: core, afs_special_actions, archive_actions, base_actions,
 	   base_direct_actions, file_info_actions, new_file, search_actions
 	*/
-	SmartWFM_Registry::set('basepath', '/home/mjob/Projekte/www/test');
+	SmartWFM_Registry::set('basepath', '/srv/http/swfm/test');
 
 	/* Specify the commands to be loaded
 	   (possible values are all filenames in the commands directory without
