@@ -31,7 +31,7 @@ config: backend-php frontend
 
 upload-uni: config
 	rsync -avP --delete index.html build/index.php
-	rsync -avPe ssh --delete build/ uni:/var/www/html/swfm-test
+	rsync -avPe ssh --delete build/ way.hrz.tu-chemnitz.de:/var/www/html/swfm-test
 
 build:
 	cd backend-php && make ARCHIVE_VERSION=${VERSION} archive && cd ..
