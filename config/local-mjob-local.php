@@ -60,7 +60,7 @@
 
 	   USED BY: setting_actions
 	*/
-	SmartWFM_Registry::set('setting_filename', '/home/mjob/Projekte/www/test/swfm.ini');
+	SmartWFM_Registry::set('setting_filename', '/srv/http/swfm/test/swfm.ini');
 
 	/* Use this file to store the bookmarks.
 	   For multiuser support you have to modify the filename dynamically.
@@ -69,7 +69,7 @@
 
 	   USED BY: bookmarks_actions
 	*/
-	SmartWFM_Registry::set('bookmarks_filename', '/home/mjob/Projekte/www/test/swfm_bookmarks.ini');
+	SmartWFM_Registry::set('bookmarks_filename', '/srv/http/swfm/test/swfm_bookmarks.ini');
 
 	/* Specify e-mail address(es) which should receive feedback messages
 
