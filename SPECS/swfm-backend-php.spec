@@ -1,6 +1,6 @@
 Summary:	Backend for Smart Web File Manager in PHP
 Name:		swfm-backend-php
-Version:	1.2.1
+Version:	1.3
 Release:	1
 License:	GPL
 Group:		Applications/Internet
@@ -44,6 +44,9 @@ install -m 0644 %{_sourcedir}/new_file.cfg $RPM_BUILD_ROOT/var/www/html/swfm-bac
 /var/www/html/swfm-backend-php/index.php
 
 %changelog
+* Fri Dec 20 2013 Morris Jobke <morris.jobke@gmail.com>
+- 1.3
+
 * Thu Mar 21 2013 Morris Jobke <morris.jobke@gmail.com>
 - 1.1
 

@@ -1,6 +1,6 @@
 Summary:		Smart Web File Manager
 Name:			swfm
-Version:		1.2
+Version:		1.3
 Release:		1
 License:		GPL
 Group:			Applications/Internet
@@ -14,7 +14,7 @@ BuildArch:		noarch
 BuildRequires:	ant
 Requires:		httpd >= 2.0
 Requires:		php >= 5.3
-Requires:		swfm-backend-php >= 1.2
+Requires:		swfm-backend-php >= 1.3
 
 %description
 Smart Web File Manager is a extensible web based file manager
@@ -48,8 +48,12 @@ install -m 0644 %{_sourcedir}/Config.json.php $RPM_BUILD_ROOT/var/www/html/swfm/
 /var/www/html/swfm/SmartWFM.min.css
 /var/www/html/swfm/SmartWFM.dev.js
 /var/www/html/swfm/SmartWFM.min.js
+/var/www/html/swfm/ckeditor
 
 %changelog
+* Fri Dec 20 2013 Morris Jobke <morris.jobke@gmail.com>
+- 1.3
+
 * Thu Mar 21 2013 Morris Jobke <morris.jobke@gmail.com>
 - 1.1
 
